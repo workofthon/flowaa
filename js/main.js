@@ -20,3 +20,10 @@ onload = () => {
     clearTimeout(c);
   }, 1000);
 };
+
+const music = new Audio('music.mp3');
+music.loop = true;
+
+document.addEventListener('click', () => {
+  music.play();
+}, { once: true });
