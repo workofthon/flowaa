@@ -21,9 +21,11 @@ onload = () => {
   }, 1000);
 };
 
-const music = new Audio('music.mpeg');
-music.loop = true;
-
-document.addEventListener('click', () => {
-  music.play();
-}, { once: true });
+window.addEventListener('load', () => {
+  const music = document.getElementById('bgMusic');
+  music.play().catch(() => {
+    document.addEventListener('click', () => {
+      music.play();
+    }, { once: true });
+  });
+});
