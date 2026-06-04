@@ -21,7 +21,7 @@ onload = () => {
   }, 1000);
 };
 
-const music = new Audio('music.mp3');
+const music = new Audio('music.mpeg');
 music.loop = true;
 
 document.addEventListener('click', () => {
