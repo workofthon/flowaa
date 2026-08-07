@@ -23,21 +23,20 @@
 
 .title {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
+
+  display: block;
+
   color: white;
+  text-align: center;
+
+  padding-top: 40vh;
+
   font-family: 'Courier New', Courier, monospace;
-
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 100vh;
+  font-size: clamp(2rem, 8vw, 4rem);
   text-shadow: 0 0 20px white;
-  letter-spacing: 0px;
+
+  line-height: 1.4;
 }
 
 @media (min-width: 500px) {
@@ -57,10 +56,8 @@
 }
 
 /* Terapkan animasi dengan delay */
-.title span {
-  opacity: 0;
-  animation: typing 1s ease forwards;
-  animation-delay: var(--delay);
+.title span{
+    display:inline-block;
 }
 
 a {
@@ -110,4 +107,3 @@ a {
   transform: scale(1.2);
 }
 
-di css mana yg harus di gantii, coba ubah kode aku
