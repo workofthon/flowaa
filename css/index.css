@@ -22,31 +22,27 @@
 }
 
 .title {
-  .title {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  padding: 0 20px;
-
+  top: 0;
+  left: 0;
   color: white;
   font-family: 'Courier New', Courier, monospace;
 
-  text-align: center;
-  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
   text-shadow: 0 0 20px white;
-
-  font-size: clamp(2rem, 6vw, 4rem);
-
-  letter-spacing: 0;
-}
+  letter-spacing: 0px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   .title {
-    letter-spacing: 8px;
+    letter-spacing: 20px;
   }
 }
 
@@ -65,15 +61,6 @@
   opacity: 0;
   animation: typing 1s ease forwards;
   animation-delay: var(--delay);
-}
-
-.word {
-  display: inline-block;
-  white-space: nowrap;
-}
-
-.word span {
-  display: inline-block;
 }
 
 a {
@@ -122,3 +109,5 @@ a {
   fill: white;
   transform: scale(1.2);
 }
+
+di css mana yg harus di gantii, coba ubah kode aku
