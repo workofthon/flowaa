@@ -1,22 +1,34 @@
-const title = document.querySelector('.title')
-const text = `Halo, a gift 4 u`.split('')
+const title = document.querySelector(".title");
 
-// Create container for better responsive layout
-title.style.display = 'flex'
-title.style.flexWrap = 'wrap'
-title.style.justifyContent = 'center'
-title.style.gap = '0.5rem'
+// Teks yang ingin ditampilkan
+const text = "Halo, a gift 4 u";
 
-for (let index = 0; index < text.length; index++) {
-  if (text[index] !== ' ') {
-    title.innerHTML += `<span>${text[index]}</span>`
-  } else {
-    title.innerHTML += `<span style='width: 1rem'></span>`
+// Kosongkan isi title
+title.innerHTML = "";
+
+// Pisahkan berdasarkan kata
+const words = text.split(" ");
+
+words.forEach((word, wordIndex) => {
+  // Container untuk satu kata
+  const wordSpan = document.createElement("span");
+  wordSpan.classList.add("word");
+
+  // Pecah setiap huruf
+  [...word].forEach(letter => {
+    const letterSpan = document.createElement("span");
+    letterSpan.textContent = letter;
+
+    // Delay animasi random
+    letterSpan.style.animationDelay = `${Math.random() * 3}s`;
+
+    wordSpan.appendChild(letterSpan);
+  });
+
+  title.appendChild(wordSpan);
+
+  // Tambahkan spasi antar kata (kecuali kata terakhir)
+  if (wordIndex !== words.length - 1) {
+    title.appendChild(document.createTextNode(" "));
   }
-}
-
-const textElements = document.querySelectorAll('.title span');
-textElements.forEach((element) => {
-  const randomDelay = Math.random() * 3;
-  element.style.animationDelay = `${randomDelay}s`;
 });
